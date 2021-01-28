@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { actionCreator } from '../actions/actionCreator';
+//import { actionCreator } from '../actions/actionCreator';
 
 class JobContainer extends Component{
     render(){
