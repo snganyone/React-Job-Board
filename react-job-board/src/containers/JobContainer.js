@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
-//import { actionCreator } from '../actions/actionCreator';
+import { connect } from 'react-redux';
+import { fetchJobs } from '../actions/actionCreator';
 
 class JobContainer extends Component{
+    componentDidMount(){
+        this.props.fetchJobs();
+    }
     render(){
         return(
             <div>Job Container</div>
@@ -10,8 +13,8 @@ class JobContainer extends Component{
     }
 }
 
-// const mapStateToProps = state => {
-//     return(jobs: state.jobs)
-// }
+const mapStateToProps = state => {
+    return({jobs: state.jobs})
+}
 
-export default JobContainer;
+export default connect(mapStateToProps, {fetchJobs})(JobContainer);

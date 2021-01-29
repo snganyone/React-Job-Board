@@ -3,8 +3,8 @@ export const fetchJobs = () => {
         dispatch({ type: 'LOADING_JOBS' })
         fetch("https://localhost:3000/jobs")
         .then(res => res.json())
-        .then(data =>{
-            dispatch({type: 'ADD_JOBS', data})
+        .then((jobs) => {
+            dispatch({type: 'ADD_JOBS', jobs})
             })
     }
 }
