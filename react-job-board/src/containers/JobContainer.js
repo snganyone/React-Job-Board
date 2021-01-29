@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import { connect } from 'react-redux';
 //import { actionCreator } from '../actions/actionCreator';
 
 class JobContainer extends Component{
@@ -8,5 +9,9 @@ class JobContainer extends Component{
         )
     }
 }
+
+// const mapStateToProps = state => {
+//     return(jobs: state.jobs)
+// }
 
 export default JobContainer;
