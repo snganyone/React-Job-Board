@@ -3,18 +3,30 @@ import { connect } from 'react-redux';
 import { fetchJobs } from '../actions/actionCreator';
 
 class JobContainer extends Component{
+    
     componentDidMount(){
-        this.props.fetchJobs();
+        console.log(this.props.fetchJobs());
     }
     render(){
         return(
-            <div>Job Container</div>
+            <div>Job Container
+                {this.props.jobs.map(x => x.title)}
+            </div>
         )
     }
 }
 
 const mapStateToProps = state => {
-    return({jobs: state.jobs})
+    return {
+        jobs: state.jobs,
+        loading: state.loading
+    }
 }
 
-export default connect(mapStateToProps, {fetchJobs})(JobContainer);
+const mapDispatchToProps = dispatch => {
+    return{
+        fetchJobs: () => dispatch(fetchJobs())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(JobContainer);

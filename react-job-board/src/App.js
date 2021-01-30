@@ -8,7 +8,7 @@ class App extends Component{
     return(
       <div>
         <Router>
-          <Route exact path="/jobs" component={JobContainer}/>
+          <Route exact path="/" component={JobContainer}/>
         </Router>
       </div>
     )
