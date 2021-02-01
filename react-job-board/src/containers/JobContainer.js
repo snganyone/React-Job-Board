@@ -30,17 +30,18 @@ class JobContainer extends Component{
         })
     }
 
-    componentDidMount(){
-        fetch("http://localhost:4000/jobs")
-        .then(res => res.json())
-        .then(data => {
-            this.setState({
-                results: data
-            })
-        })
-    }
+    // componentDidMount(){
+    //     fetch("http://localhost:4000/jobs")
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         this.setState({
+    //             results: data
+    //         })
+    //     })
+    // }
 
     render(){
+        console.log(this.state.results);
         return(
             <div>
                 Job Container
