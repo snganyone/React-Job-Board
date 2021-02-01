@@ -4,18 +4,48 @@ import { fetchJobs } from '../actions/actionCreator';
 
 import Jobs from '../components/Jobs';
 import JobSearch from '../components/JobSearch';
+import JobList from '../components/JobList';
 
 class JobContainer extends Component{
+    // componentDidMount(){
+    //     console.log(this.props.fetchJobs());
+    // }
+
+    state = {
+        results: []
+    }
+
+    handleSubmit = input => {
+        fetch("http://localhost:4000/jobs", {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            this.setState({
+                results: data
+            })
+        })
+    }
+
     componentDidMount(){
-        console.log(this.props.fetchJobs());
+        fetch("http://localhost:4000/jobs")
+        .then(res => res.json())
+        .then(data => {
+            this.setState({
+                results: data
+            })
+        })
     }
 
     render(){
         return(
             <div>
                 Job Container
-                <JobSearch />
-                <Jobs jobs={this.props.jobs}/>
+                <JobSearch handlesubmit={this.handleSubmit}/>
+                <JobList jobs={this.state.results}/>
             </div>
         )
     }
