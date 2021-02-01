@@ -4,7 +4,7 @@ import Job from './Job';
 const Jobs = props => {
     return(
         <div>
-            <Job />
+            {props.jobs.map(job => <Job job={job}/>)}
         </div>
     )
 }

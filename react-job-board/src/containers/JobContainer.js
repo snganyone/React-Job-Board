@@ -13,8 +13,7 @@ class JobContainer extends Component{
         return(
             <div>
                 Job Container
-                {this.props.jobs.map(x => x.title)}
-                <Jobs />
+                <Jobs jobs={this.props.jobs}/>
             </div>
         )
     }
