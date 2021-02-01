@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class JobSearch extends Component{
     state = {
-        query: "",
-        results: []
+        query: ""
     }
 
     handleQueryChange = event => {
