@@ -17,7 +17,7 @@ class JobSearch extends Component{
     }
 
     render(){
-        console.log(this.state.results);
+        //console.log(this.state.results);
         return(
             <div>
                 <form onSubmit={event => this.handleSubmit(event)}>
@@ -25,7 +25,6 @@ class JobSearch extends Component{
                     <input type="text" onChange={event => this.handleQueryChange(event)} value={this.state.query}/><br></br>
                     <input type="submit" />
                 </form>
-                {this.state.query}
             </div>
         )
     }
