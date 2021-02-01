@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { Col } from 'react-bootstrap';
 
 class JobSearch extends Component{
     state = {
@@ -24,9 +26,14 @@ class JobSearch extends Component{
             <div>
                 <Form onSubmit={event => this.handleSubmit(event)}>
                     <Form.Row>
-                    <label>Enter a Search Term:</label><br></br>
-                    <input type="text" onChange={event => this.handleQueryChange(event)} value={this.state.query}/><br></br>
-                    <input type="submit" value="Search Jobs"/>
+                    <Col xs={2}>
+                        <Form.Control placeholder="Search Term" onChange={event => this.handleQueryChange(event)} value={this.state.query}/>
+                    </Col>
+                    <Col>
+                    <Button variant="primary" type="submit">
+                        Search Jobs
+                    </Button>
+                    </Col>
                     </Form.Row>
                 </Form>
             </div>
