@@ -16,7 +16,10 @@ class JobContainer extends Component{
     }
 
     handleSubmit = input => {
-        fetch("http://localhost:4000/jobs", {
+        let url = new URL("http://localhost:4000/jobs");
+        url.search = new URLSearchParams({query: input});
+
+        fetch(url, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
