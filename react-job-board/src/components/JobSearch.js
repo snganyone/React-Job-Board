@@ -11,6 +11,10 @@ class JobSearch extends Component{
         });
     }
 
+    handleSubmit = input => {
+        
+    }
+
     render(){
         return(
             <div>

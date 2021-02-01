@@ -6,11 +6,10 @@ import Jobs from '../components/Jobs';
 import JobSearch from '../components/JobSearch';
 
 class JobContainer extends Component{
-    
     componentDidMount(){
         console.log(this.props.fetchJobs());
     }
-    
+
     render(){
         return(
             <div>
