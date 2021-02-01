@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchJobs } from '../actions/actionCreator';
 
 import Jobs from '../components/Jobs';
+import JobSearch from '../components/JobSearch';
 
 class JobContainer extends Component{
     
@@ -13,6 +14,7 @@ class JobContainer extends Component{
         return(
             <div>
                 Job Container
+                <JobSearch />
                 <Jobs jobs={this.props.jobs}/>
             </div>
         )
