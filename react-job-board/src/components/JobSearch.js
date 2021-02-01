@@ -12,7 +12,18 @@ class JobSearch extends Component{
     }
 
     handleSubmit = input => {
-        
+        fetch("http://localhost:4000/jobs", {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            this.setState({
+                query: data
+            })
+        })
     }
 
     render(){
