@@ -9,6 +9,8 @@ class JobList extends Component {
                         <Card>
                             <Card.Body>
                                 <Card.Title>{job.title}</Card.Title>
+                                <Card.Subtitle>{job.employer}</Card.Subtitle>
+                                <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
                         </Card>
                 )}
