@@ -22,10 +22,10 @@ class JobSearch extends Component{
 
     render(){
         return(
-            <div>
+            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 <Form onSubmit={event => this.handleSubmit(event)}>
                     <Form.Row>
-                    <Col xs={2}>
+                    <Col xs={6}>
                         <Form.Control placeholder="Search Term" onChange={event => this.handleQueryChange(event)} value={this.state.query}/>
                     </Col>
                     <Col>
