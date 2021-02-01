@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchJobs } from '../actions/actionCreator';
 
+import Jobs from '../components/Jobs';
+
 class JobContainer extends Component{
     
     componentDidMount(){
@@ -9,8 +11,10 @@ class JobContainer extends Component{
     }
     render(){
         return(
-            <div>Job Container
+            <div>
+                Job Container
                 {this.props.jobs.map(x => x.title)}
+                <Jobs />
             </div>
         )
     }

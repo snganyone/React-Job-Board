@@ -3,7 +3,9 @@ import Job from './Job';
 
 const Jobs = props => {
     return(
-        <div></div>
+        <div>
+            <Job />
+        </div>
     )
 }
 
