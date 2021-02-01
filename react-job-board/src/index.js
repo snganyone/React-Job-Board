@@ -10,6 +10,8 @@ import reducer from './reducers/reducer';
 
 import logger from 'redux-logger';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import reportWebVitals from './reportWebVitals';
 
 const store = createStore(
