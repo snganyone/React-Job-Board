@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Form from 'react-bootstrap/Form';
+
 class JobSearch extends Component{
     state = {
         query: ""
@@ -20,11 +22,13 @@ class JobSearch extends Component{
         //console.log(this.state.results);
         return(
             <div>
-                <form onSubmit={event => this.handleSubmit(event)}>
+                <Form onSubmit={event => this.handleSubmit(event)}>
+                    <Form.Row>
                     <label>Enter a Search Term:</label><br></br>
                     <input type="text" onChange={event => this.handleQueryChange(event)} value={this.state.query}/><br></br>
-                    <input type="submit" />
-                </form>
+                    <input type="submit" value="Search Jobs"/>
+                    </Form.Row>
+                </Form>
             </div>
         )
     }
