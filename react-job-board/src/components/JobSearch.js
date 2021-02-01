@@ -21,7 +21,6 @@ class JobSearch extends Component{
     }
 
     render(){
-        //console.log(this.state.results);
         return(
             <div>
                 <Form onSubmit={event => this.handleSubmit(event)}>
