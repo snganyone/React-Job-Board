@@ -10,6 +10,7 @@ class JobContainer extends Component{
     componentDidMount(){
         console.log(this.props.fetchJobs());
     }
+    
     render(){
         return(
             <div>
