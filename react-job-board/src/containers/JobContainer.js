@@ -8,33 +8,33 @@ import JobList from '../components/JobList';
 
 class JobContainer extends Component{
     state = {
-        results: []
+        results: null
     }
 
-    handleSubmit = input => {
-        let url = new URL("http://localhost:4000/jobs");
-        url.search = new URLSearchParams({query: input});
-
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            this.setState({
-                results: data
-            })
-        })
+    componentDidMount(){
+        this.props.fetchJobs()
     }
+
+     handleSubmit = input => {
+         let results = this.props.jobs.filter(job => job.title.includes(input));
+         this.setState({
+             results
+         })
+     }
+
+     clearSearch = () => {
+         this.setState({
+             results: null
+         })
+     }
 
     render(){
         console.log(this.state.results);
         return(
-            <div>
+            <div>    
                 <JobSearch handlesubmit={this.handleSubmit}/>
-                <JobList jobs={this.state.results}/>
+                {this.state.results && <button onClick={this.clearSearch}>Clear</button>}
+                <JobList jobs={this.state.results || this.props.jobs}/>
             </div>
         )
     }
