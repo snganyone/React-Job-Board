@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class JobSearch extends Component{
     state = {
-        query: ""
+        query: "",
+        results: []
     }
 
     handleQueryChange = event => {
@@ -11,7 +12,9 @@ class JobSearch extends Component{
         });
     }
 
-    handleSubmit = input => {
+    handleSubmit = event => {
+        event.preventDefault();
+
         fetch("http://localhost:4000/jobs", {
             method: 'GET',
             headers: {
@@ -21,15 +24,16 @@ class JobSearch extends Component{
         .then(res => res.json())
         .then(data => {
             this.setState({
-                query: data
+                results: data
             })
         })
     }
 
     render(){
+        console.log(this.state.results);
         return(
             <div>
-                <form>
+                <form onSubmit={event => this.handleSubmit(event)}>
                     <label>Enter a Search Term:</label><br></br>
                     <input type="text" onChange={event => this.handleQueryChange(event)} value={this.state.query}/><br></br>
                     <input type="submit" />
