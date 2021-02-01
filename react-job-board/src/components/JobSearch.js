@@ -16,7 +16,7 @@ class JobSearch extends Component{
             <div>
                 <form>
                     <label>Enter a Search Term:</label><br></br>
-                    <input type="text" onChange={this.handleQueryChange} value={this.state.query}/><br></br>
+                    <input type="text" onChange={event => this.handleQueryChange(event)} value={this.state.query}/><br></br>
                     <input type="submit" />
                 </form>
                 {this.state.query}
