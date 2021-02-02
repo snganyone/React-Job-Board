@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import Home from '../components/Home';
+
 class HomeContainer extends Component{
     render(){
         return(
@@ -15,6 +17,7 @@ class HomeContainer extends Component{
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                <Home />
             </div>
         )
     }
