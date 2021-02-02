@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 class JobInput extends Component {
     render(){
         return(
-            <div></div>
+            <div>
+            <Button variant="success">Add Job</Button>
+            </div>
         )
     }
 }
