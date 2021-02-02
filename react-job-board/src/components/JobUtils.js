@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 
-class JobInput extends Component {
+class JobUtils extends Component {
     render(){
         return(
             <div>
@@ -11,4 +11,4 @@ class JobInput extends Component {
     }
 }
 
-export default JobInput;
+export default JobUtils;
