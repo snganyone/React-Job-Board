@@ -5,7 +5,7 @@ class JobInput extends Component {
     render(){
         return(
             <div>
-            <Button variant="success">Add Job</Button>
+            <Button variant="success" href="/add-job">Add Job</Button>
             </div>
         )
     }
