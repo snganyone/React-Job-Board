@@ -17,10 +17,27 @@ class JobForm extends Component{
                         <Col>
                             <Form.Control placeholder="Job Title"/>
                         </Col>
+                        <Col>
+                            <Form.Control placeholder="Employer"/>
+                        </Col>
+                    </Form.Row>
+                    <Form.Row>
+                        <Col>
+                            <Form.Control placeholder="Location"/>
+                        </Col>
+                        <Col>
+                            <Form.Control placeholder="Description"/>
+                        </Col>
+                        <Col>
+                            <Form.Control placeholder="Release Date"/>
+                        </Col>
+                        <Col>
+                            <Form.Control placeholder="Job Type"/>
+                        </Col>
+                    </Form.Row>
                     <Button variant="primary" type="submit">
                         Add Job
                     </Button>
-                    </Form.Row>
                 </Form>
             </div>
         )
