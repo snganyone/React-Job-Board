@@ -5,7 +5,6 @@ class Home extends Component{
     render(){
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                Home Page
                 <Card className="text-center">
                     <Card.Header>Welcome to Relier</Card.Header>
                     <Card.Body>
