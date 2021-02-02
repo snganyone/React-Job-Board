@@ -5,6 +5,7 @@ import { fetchJobs } from '../actions/actionCreator';
 //import Jobs from '../components/Jobs';
 import JobSearch from '../components/JobSearch';
 import JobList from '../components/JobList';
+import JobInput from '../components/JobInput';
 
 import Button from 'react-bootstrap/Button';
 
@@ -36,6 +37,7 @@ class JobContainer extends Component{
             <div>    
                 <JobSearch handlesubmit={this.handleSubmit}/>
                 {this.state.results && <Button variant="secondary" onClick={this.clearSearch}>Clear</Button>}
+                <JobInput />
                 <JobList jobs={this.state.results || this.props.jobs}/>
             </div>
         )
