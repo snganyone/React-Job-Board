@@ -13,6 +13,7 @@ class Home extends Component{
                             An online Job dedicated to help you find the perfect fit.
                         </Card.Text>
                     </Card.Body>
+                    <Card.Footer className="text-muted">Relier helps people find jobs</Card.Footer>
                 </Card>
             </div>
         )
