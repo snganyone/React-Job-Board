@@ -12,6 +12,7 @@ class JobList extends Component {
                                 <Card.Subtitle>{job.employer}</Card.Subtitle>
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
+                            <Card.Link href="#">Job Link</Card.Link>
                         </Card>
                 )}
             </div>
