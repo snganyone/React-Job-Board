@@ -14,13 +14,19 @@ class JobForm extends Component{
         job_type: ""
     }
 
+    handleOnChange = event => {
+        this.setState({
+            title: event.target.value
+        })
+    }
+
     render(){
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 <Form>
                     <Form.Row> 
                         <Col>
-                            <Form.Control placeholder="Job Title"/>
+                            <Form.Control placeholder="Job Title" onChange={event => this.handleOnChange(event)} value={this.state.title}/>    
                         </Col>
                         <Col>
                             <Form.Control placeholder="Employer"/>
