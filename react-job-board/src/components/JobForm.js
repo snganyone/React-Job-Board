@@ -14,7 +14,7 @@ class JobForm extends Component{
         location: "",
         description: "",
         release_date: "",
-        jobType: ""
+        job_type: ""
     }
 
     handleOnChange = event => {
@@ -33,7 +33,7 @@ class JobForm extends Component{
             location: "",
             description: "",
             release_date: "",
-            jobType: ""
+            job_type: ""
         })
     }
 
@@ -61,7 +61,7 @@ class JobForm extends Component{
                             <Form.Control placeholder="Release Date" onChange={event => this.handleOnChange(event)} value={this.state.release_date} name="release_date"/>
                         </Col>
                         <Col>
-                            <Form.Control placeholder="Job Type" onChange={event => this.handleOnChange(event)} value={this.state.jobType} name="jobType"/>
+                            <Form.Control placeholder="Job Type" onChange={event => this.handleOnChange(event)} value={this.state.jobType} name="job_type"/>
                         </Col>
                     </Form.Row>
                     <Button variant="primary" type="submit">
