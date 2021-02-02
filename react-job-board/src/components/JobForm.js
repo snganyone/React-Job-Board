@@ -6,7 +6,12 @@ import { Col } from 'react-bootstrap';
 class JobForm extends Component{
 
     state = {
-        text: ''
+        title: "",
+        employer: "",
+        location: "",
+        description: "",
+        release_date: "",
+        job_type: ""
     }
 
     render(){
