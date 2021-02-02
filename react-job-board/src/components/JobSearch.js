@@ -18,6 +18,9 @@ class JobSearch extends Component{
     handleSubmit = event => {
         event.preventDefault();
         this.props.handlesubmit(this.state.query);
+        this.setState({
+            query: ""
+        })
     }
 
     render(){
