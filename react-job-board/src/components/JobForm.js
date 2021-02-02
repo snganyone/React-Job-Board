@@ -3,6 +3,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Col } from 'react-bootstrap';
 
+import { addJob } from '../actions/actionCreator';
+import { connect } from 'react-redux';
+
 class JobForm extends Component{
 
     state = {
@@ -11,39 +14,54 @@ class JobForm extends Component{
         location: "",
         description: "",
         release_date: "",
-        job_type: ""
+        jobType: ""
     }
 
     handleOnChange = event => {
         this.setState({
-            title: event.target.value
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = event => {
+        console.log(this.props);
+        event.preventDefault();
+        this.props.addJob(this.state);
+        this.setState({
+            title: "",
+            employer: "",
+            location: "",
+            description: "",
+            release_date: "",
+            jobType: ""
         })
     }
 
     render(){
+        
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <Form.Row> 
                         <Col>
-                            <Form.Control placeholder="Job Title" onChange={event => this.handleOnChange(event)} value={this.state.title}/>    
+                            <Form.Control placeholder="Job Title" onChange={event => this.handleOnChange(event)} value={this.state.title} name="title"/>    
                         </Col>
                         <Col>
-                            <Form.Control placeholder="Employer"/>
+                            <Form.Control placeholder="Employer" onChange={event => this.handleOnChange(event)} value={this.state.employer} name="employer"/>
                         </Col>
                     </Form.Row>
                     <Form.Row>
                         <Col>
-                            <Form.Control placeholder="Location"/>
+                            <Form.Control placeholder="Location" onChange={event => this.handleOnChange(event)} value={this.state.location} name="location"/>
                         </Col>
                         <Col>
-                            <Form.Control placeholder="Description"/>
+                            <Form.Control placeholder="Description" onChange={event => this.handleOnChange(event)} value={this.state.description} name="description"/>
                         </Col>
                         <Col>
-                            <Form.Control placeholder="Release Date"/>
+                            <Form.Control placeholder="Release Date" onChange={event => this.handleOnChange(event)} value={this.state.release_date} name="release_date"/>
                         </Col>
                         <Col>
-                            <Form.Control placeholder="Job Type"/>
+                            <Form.Control placeholder="Job Type" onChange={event => this.handleOnChange(event)} value={this.state.jobType} name="jobType"/>
                         </Col>
                     </Form.Row>
                     <Button variant="primary" type="submit">
@@ -55,4 +73,4 @@ class JobForm extends Component{
     }
 }
 
-export default JobForm;
+export default connect(null, {addJob})(JobForm);
