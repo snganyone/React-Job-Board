@@ -25,10 +25,8 @@ export const addJob = (job) => {
 
 export const deleteJob = (job) => {
     return (dispatch) => {
-        fetch("http://localhost:4000/jobs", {
-            method: "POST",
-            headers: {"Content-type": "application/json"},
-            body: JSON.stringify({job})
+        fetch(`http://localhost:4000/jobs/${job.id}`, {
+            method: "DELETE",
         })
         .then(res => {return res.json()})
         .then((data) => {

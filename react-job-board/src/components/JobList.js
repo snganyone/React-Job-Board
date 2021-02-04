@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+import { deleteJob } from '../actions/actionCreator';
+import { connect } from 'react-redux';
+
 class JobList extends Component {
+
+    handleDelete = event => {
+        this.props.deleteJob(this.state);
+    }
+
     render(){
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
@@ -14,7 +22,7 @@ class JobList extends Component {
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
                             <Card.Link className="text-center" href="#">Job Link</Card.Link>
-                            <Button variant="danger">Delete Job</Button>
+                            <Button variant="danger" onClick={this.props.deleteJob}>Delete Job</Button>
                         </Card>
                 )}
             </div>
@@ -22,4 +30,5 @@ class JobList extends Component {
     }
 }
 
-export default JobList;
+
+export default connect(null, {deleteJob})(JobList);
