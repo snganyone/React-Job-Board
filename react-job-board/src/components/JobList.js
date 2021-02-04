@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class JobList extends Component {
     render(){
@@ -13,6 +14,7 @@ class JobList extends Component {
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
                             <Card.Link className="text-center" href="#">Job Link</Card.Link>
+                            <Button variant="danger">Delete Job</Button>
                         </Card>
                 )}
             </div>
