@@ -23,14 +23,12 @@ export const addJob = (job) => {
     }
 }
 
-export const deleteJob = (job) => {
+export const deleteJob = (id) => {
     return (dispatch) => {
-        fetch(`http://localhost:4000/jobs/${job.id}`, {
-            method: "DELETE",
-        })
+        fetch(`http://localhost:4000/jobs/${id}`, {method: "DELETE"})
         .then(res => {return res.json()})
         .then((data) => {
-            dispatch({type: 'DELETE_JOB', id: data.id})
+            dispatch({type: 'DELETE_JOB', id: data})
             })
     }
 }
