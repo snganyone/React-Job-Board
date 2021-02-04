@@ -14,6 +14,11 @@ class JobsController < ApplicationController
         render json: @job, except: [:created_at, :updated_at]
     end
 
+    def show
+        @job = Job.find(params[:id])
+        render json: @job
+    end
+
     def destroy 
         @job = Job.find(params[:id])
         if @job
