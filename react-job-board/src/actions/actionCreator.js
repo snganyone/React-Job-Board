@@ -28,7 +28,7 @@ export const deleteJob = (id) => {
         fetch(`http://localhost:4000/jobs/${id}`, {method: "DELETE"})
         .then(res => {return res.json()})
         .then((data) => {
-            dispatch({type: 'DELETE_JOB', id: data})
+            dispatch({type: 'DELETE_JOB', id: data.id})
             })
     }
 }

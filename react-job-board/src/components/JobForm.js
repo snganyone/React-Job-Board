@@ -24,7 +24,6 @@ class JobForm extends Component{
     }
 
     handleSubmit = event => {
-        console.log(this.props);
         event.preventDefault();
         this.props.addJob(this.state);
         this.setState({
