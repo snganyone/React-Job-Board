@@ -21,7 +21,6 @@ class JobList extends Component {
                                 <Card.Subtitle>{job.employer}</Card.Subtitle>
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
-                            <Card.Link className="text-center" href="#">Job Link</Card.Link>
                             <Button variant="danger" onClick={() => this.props.deleteJob(job.id)} id={job.id}>Delete Job</Button>
                         </Card>
                 )}
