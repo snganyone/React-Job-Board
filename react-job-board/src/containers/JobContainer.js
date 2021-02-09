@@ -18,7 +18,7 @@ class JobContainer extends Component{
     }
 
      handleSubmit = input => {
-         let results = this.props.jobs.filter(job => job.title.includes(input));
+         let results = this.props.job.jobs.filter(job => job.title.includes(input));
          this.setState({
              results
          })
@@ -31,13 +31,13 @@ class JobContainer extends Component{
      }
 
     render(){
-        console.log(this.props.jobs);
+        console.log(this.props.job);
         return(
             <div>    
                 <JobSearch handlesubmit={this.handleSubmit}/>
                 {this.state.results && <Button variant="secondary" onClick={this.clearSearch}>Clear</Button>}
                 <JobUtils />
-                <JobList jobs={this.state.results || this.props.jobs}/>
+                <JobList jobs={this.state.results || this.props.job}/>
             </div>
         )
     }
@@ -45,7 +45,7 @@ class JobContainer extends Component{
 
 const mapStateToProps = state => {
     return {
-        jobs: state.jobs,
+        job: state.jobs,
         loading: state.loading
     }
 }
