@@ -14,6 +14,7 @@ class NavMenu extends Component{
                     <Nav className="mr-auto">
                         <Nav.Link href="/jobs">Jobs</Nav.Link>
                         <Nav.Link href="/add-job">Post a Job</Nav.Link>
+                        <Nav.Link href="/agencies">Job Agencies</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
