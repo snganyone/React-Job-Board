@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { fetchAgencies } from '../actions/agencyCreator';
 
 class AgencyContainer extends Component{
+    state = {
+        results: null
+    }
 
     componentDidMount(){
         this.props.fetchAgencies()
@@ -10,7 +13,7 @@ class AgencyContainer extends Component{
 
     render(){
         console.log(this.props);
-        return(<div></div>)
+        return(<div>Agencies</div>)
     }
 }
 

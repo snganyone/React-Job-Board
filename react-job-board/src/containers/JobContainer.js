@@ -32,7 +32,7 @@ class JobContainer extends Component{
      }
 
     render(){
-        console.log(this.state.results);
+        console.log(this.props.jobs);
         return(
             <div>    
                 <JobSearch handlesubmit={this.handleSubmit}/>

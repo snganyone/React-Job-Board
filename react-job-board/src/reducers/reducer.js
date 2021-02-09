@@ -1,4 +1,4 @@
-const jobsReducer = (state = { jobs: [], loading: false}, action) => {
+const jobsReducer = (state = { jobs: [], loading: false }, action) => {
     switch (action.type) {
         case 'LOADING_JOBS':
             return {
