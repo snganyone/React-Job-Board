@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { fetchJobs } from '../actions/actionCreator';
 
 //import Jobs from '../components/Jobs';
-import JobSearch from '../components/JobSearch';
-import JobList from '../components/JobList';
-import JobUtils from '../components/JobUtils';
+import JobSearch from '../components/Jobs/JobSearch';
+import JobList from '../components/Jobs/JobList';
+import JobUtils from '../components/Jobs/JobUtils';
 
 import Button from 'react-bootstrap/Button';
 

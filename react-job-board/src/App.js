@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import JobContainer from '../src/containers/JobContainer';
 import Home from '../src/components/Home';
-import JobForm from '../src/components/JobForm';
+import JobForm from '../src/components/Jobs/JobForm';
 import NavMenu from '../src/components/NavMenu';
 import Footer from '../src/components/Footer';
 
