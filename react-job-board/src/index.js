@@ -6,7 +6,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from './reducers/reducer';
+import rootReducer from './reducers/reducer';
 
 import logger from 'redux-logger';
 
@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 
 const store = createStore(
-  reducer,
+  rootReducer,
   compose(
       applyMiddleware(thunk, logger),
       window.__REDUX_DEVTOOLS_EXTENSION__ &&

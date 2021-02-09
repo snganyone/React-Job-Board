@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchJobs } from '../actions/jobCreator';
 
-//import Jobs from '../components/Jobs';
 import JobSearch from '../components/Jobs/JobSearch';
 import JobList from '../components/Jobs/JobList';
 import JobUtils from '../components/Jobs/JobUtils';

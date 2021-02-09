@@ -12,7 +12,7 @@ class AgencyContainer extends Component{
     }
 
     render(){
-        console.log(this.props);
+        console.log(this.props.agency.agencies.map(a => a.name));
         return(<div>Agencies</div>)
     }
 }
@@ -20,7 +20,7 @@ class AgencyContainer extends Component{
 
 const mapStateToProps = state => {
     return {
-        agencies: state.agencies,
+        agency: state.agencies,
         loading: state.loading
     }
 }

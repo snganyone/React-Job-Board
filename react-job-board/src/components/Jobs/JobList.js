@@ -14,7 +14,7 @@ class JobList extends Component {
     render(){
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                {this.props.jobs.map(job => 
+                {this.props.jobs.jobs.map(job => 
                         <Card>
                             <Card.Body>
                                 <Card.Title>{job.title}</Card.Title>
