@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-import { deleteJob } from '../../actions/actionCreator';
+import { deleteJob } from '../../actions/jobCreator';
 import { connect } from 'react-redux';
 
 class JobList extends Component {
