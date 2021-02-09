@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAgencies } from '../actions/agencyCreator';
 
+import AgencyList from '../components/Agencies/AgencyList';
+
 class AgencyContainer extends Component{
     state = {
         results: null
@@ -13,7 +15,11 @@ class AgencyContainer extends Component{
 
     render(){
         console.log(this.props.agency.agencies.map(a => a.name));
-        return(<div>Agencies</div>)
+        return(
+        <div>
+            <AgencyList agencies={this.props.agency.agencies}/>
+        </div>
+        )
     }
 }
 
