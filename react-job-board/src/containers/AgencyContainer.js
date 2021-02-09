@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchAgencies } from '../actions/agencyCreator';
 
 class AgencyContainer extends Component{
     render(){
@@ -6,4 +8,11 @@ class AgencyContainer extends Component{
     }
 }
 
-export default AgencyContainer;
+
+const mapDispatchToProps = dispatch => {
+    return{
+        fetchAgencies: () => dispatch(fetchAgencies())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(AgencyContainer);
