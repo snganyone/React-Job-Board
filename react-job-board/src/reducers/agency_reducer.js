@@ -12,5 +12,8 @@ const agencyReducer = (state = { agencies: [], loading: false}, action) => {
                 agencies: action.agencies,
                 loading: false
             }
+        default:
+            return state;
     }
 }
+export default agencyReducer;

@@ -3,19 +3,21 @@ import { connect } from 'react-redux';
 import { fetchAgencies } from '../actions/agencyCreator';
 
 class AgencyContainer extends Component{
-    state = {
-        agencies: []
+
+    componentDidMount(){
+        this.props.fetchAgencies()
     }
 
     render(){
-        return(<div>agencies</div>)
+        console.log(this.props);
+        return(<div></div>)
     }
 }
 
 
 const mapStateToProps = state => {
     return {
-        agencies: state.jobs,
+        agencies: state.agencies,
         loading: state.loading
     }
 }
