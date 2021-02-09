@@ -8,3 +8,7 @@
 Job.create(title: "Software Engineer", employer: "Google", location: "Silicon Valley, CA", description: "Develop software apps", release_date: DateTime.new(2021, 6, 22), job_type: "Full-Time")
 Job.create(title: "Network Engineer", employer: "Cisco", location: "Houston, TX", description: "Maintain network security", release_date: DateTime.new(2021, 6, 22), job_type: "Full-Time")
 Job.create(title: "System Architect", employer: "Microsoft", location: "New York, NY", description: "Computer Programming", release_date: DateTime.new(2021, 6, 22), job_type: "Full-Time")
+
+Agency.create(name: "Addeco", bio: "Help people find jobs", agency_type: "Temp")
+Agency.create(name: "Atlas", bio: "Here to help find the perfect fit", agency_type: "Temp-to-Perm")
+Agency.create(name: "Volt", bio: "Helping people one step at a time", agency_type: "Temp-to-Perm")
