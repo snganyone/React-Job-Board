@@ -5,6 +5,7 @@ import Home from '../src/components/Home';
 import JobForm from '../src/components/Jobs/JobForm';
 import NavMenu from '../src/components/NavMenu';
 import Footer from '../src/components/Footer';
+import AgencyContainer from '../src/containers/AgencyContainer';
 
 class App extends Component{
   render(){
@@ -16,6 +17,7 @@ class App extends Component{
         <Route exact path="/" component={Home}/>
         <Route exact path="/jobs" component={JobContainer}/>
         <Route exact path="/add-job" component={JobForm}/>
+        <Route exact path="/agencies" component={AgencyContainer}/>
         </Router>
       </div>
     )
