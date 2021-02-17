@@ -8,7 +8,7 @@ class JobShow extends Component{
     }
 
     componentDidMount(){
-        //this.props.showJob(id);
+        this.props.showJob(this.props.match.params.id);
         console.log(this.props.match.params.id);
     }
 
@@ -20,4 +20,10 @@ class JobShow extends Component{
     }
 }
 
-export default connect(null, { showJob })(JobShow);
+const mapDispatchToProps = dispatch => {
+    return{
+        showJob: (id) => dispatch(showJob(id))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(JobShow);
