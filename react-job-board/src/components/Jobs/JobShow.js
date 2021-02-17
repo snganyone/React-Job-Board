@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class JobShow extends Component{
-    render(){
-        return(
-            <div>Show Page</div>
-        )
-    }
+export const JobShow = (props) => {
+    return(
+    <div>
+        {props.jobs.map(job => job.title)}
+    </div>
+    )
 }
 
 export default JobShow;
