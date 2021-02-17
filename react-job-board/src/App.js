@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 
 import JobContainer from '../src/containers/JobContainer';
 import Home from '../src/components/Home';
@@ -15,15 +15,13 @@ class App extends Component{
       <div>
         <NavMenu />
         <Footer />
-
-        <Switch>
+        <Router>
         <Route exact path="/" component={Home}/>
         <Route exact path="/jobs" component={JobContainer}/>
-        <Route path="/job/:id" render={(routerProps) =>
-          <JobShow {...routerProps}/>} />
+        <Route path="/job/:id" component={JobShow}/>
         <Route exact path="/add-job" component={JobForm}/>
         <Route exact path="/agencies" component={AgencyContainer}/>
-        </Switch>
+        </Router>
 
       </div>
     )

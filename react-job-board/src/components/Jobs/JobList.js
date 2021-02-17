@@ -4,17 +4,12 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 import { deleteJob } from '../../actions/jobCreator';
-import { showJob } from '../../actions/jobCreator';
 import { connect } from 'react-redux';
 
 class JobList extends Component {
 
     handleDelete = id => {
         this.props.deleteJob(id);
-    }
-
-    handleShow = id => {
-        this.props.showJob(id)
     }
 
     render(){
@@ -28,7 +23,7 @@ class JobList extends Component {
                                 <Card.Subtitle>{job.employer}</Card.Subtitle>
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
-                            <Link to={'/job'} id={job.id}>Job Link</Link>
+                            <Link to={`/job/${job.id}`} id={job.id}>Job Link</Link>
                             <Button variant="danger" onClick={() => this.props.deleteJob(job.id)} id={job.id}>Delete Job</Button>
                         </Card>
                 )}
@@ -38,4 +33,4 @@ class JobList extends Component {
 }
 
 
-export default connect(null, {deleteJob, showJob})(JobList);
+export default connect(null, {deleteJob})(JobList);
