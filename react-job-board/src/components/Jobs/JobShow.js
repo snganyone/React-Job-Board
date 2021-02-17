@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export const JobShow = (props) => {
-    return(
-    <div>
-        {props.jobs.map(job => job.title)}
-    </div>
-    )
+class JobShow extends Component{
+    render(){
+        console.log(this.props)
+        return(
+            <div>Show Job</div>
+        )
+    }
 }
 
 export default JobShow;
