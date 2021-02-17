@@ -50,6 +50,11 @@ function jobsReducer(state = { jobs: [], loading: false }, action) {
                 jobs: [...state.jobs, action.job]
             }
 
+        case 'SHOW_JOB':
+            return{
+                jobs: state.jobs.filter(job => job.id == action.id)
+            }
+
         case 'DELETE_JOB':
             return {jobs: state.jobs.filter(job => job.id !== action.id)}
 
