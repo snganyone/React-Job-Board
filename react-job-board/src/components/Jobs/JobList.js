@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 import { deleteJob } from '../../actions/jobCreator';
+import { showJob } from '../../actions/jobCreator';
 import { connect } from 'react-redux';
 
 class JobList extends Component {
@@ -11,7 +12,10 @@ class JobList extends Component {
         this.props.deleteJob(id);
     }
 
+    handleShow = id => {}
+
     render(){
+        console.log(this.props)
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 {this.props.jobs.map(job => 
@@ -30,4 +34,4 @@ class JobList extends Component {
 }
 
 
-export default connect(null, {deleteJob})(JobList);
+export default connect(null, {deleteJob, showJob})(JobList);
