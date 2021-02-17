@@ -23,13 +23,13 @@ export const addJob = (job) => {
     }
 }
 
-export const const showJob = (id) => {
+export const showJob = (id) => {
     return(dispatch) => {
         fetch(`http://localhost:4000/jobs/${id}`)
         .then(res => {return res.json()})
-        .then((data)) => {
+        .then((data) => {
             dispatch({type: 'SHOW_JOB', id: data.id})
-        }
+        })
     }
 }
 
