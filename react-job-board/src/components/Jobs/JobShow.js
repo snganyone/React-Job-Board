@@ -17,7 +17,6 @@ class JobShow extends Component{
         console.log(this.state)
         return(
             <div>
-                Show Job
                 {this.props.job.jobs.map(j => j.title)}
             </div>
         )
