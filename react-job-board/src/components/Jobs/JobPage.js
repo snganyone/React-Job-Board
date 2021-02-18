@@ -1,7 +1,10 @@
 import React from 'react';
 
 const JobPage = (props) => {
-    return(<div></div>)
+    return(
+    <div>
+    </div>
+    )
 }
 
-export default JoPage;
+export default JobPage;

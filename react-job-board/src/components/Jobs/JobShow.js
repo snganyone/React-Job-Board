@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { showJob } from '../../actions/jobCreator';
 import { connect } from 'react-redux';
+import JobPage from './JobPage';
 
 class JobShow extends Component{
     state = {
@@ -17,7 +18,7 @@ class JobShow extends Component{
         console.log(this.state)
         return(
             <div>
-                {this.props.job.jobs.map(j => j.title)}
+                <JobPage jobs={this.props.job.jobs}/>
             </div>
         )
     }
