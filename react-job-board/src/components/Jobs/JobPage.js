@@ -8,7 +8,13 @@ const JobPage = (props) => {
         <h3>Job Description</h3>
             {props.jobs.map(j => 
             <Jumbotron>
-                {j.title}
+                <h4>Job Details</h4>
+                <p>Job Title: {j.title}</p>
+                <p>Job Employer: {j.employer}</p>
+                <p>Job Location: {j.location}</p>
+                <p>Description: {j.description}</p>
+                <p>Posting Date: {j.release_date}</p>
+                <p>Job Type: {j.job_type}</p>
             </Jumbotron>
             )}
     </div>
