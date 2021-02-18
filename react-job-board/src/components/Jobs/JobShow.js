@@ -14,9 +14,19 @@ class JobShow extends Component{
 
     render(){
         console.log("show page")
+        console.log(this.state)
         return(
-            <div>Show Job</div>
+            <div>
+                Show Job
+                
+            </div>
         )
+    }
+}
+
+const mapStateToProps = state => {
+    return{
+        job: state.jobs
     }
 }
 
@@ -26,4 +36,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(JobShow);
+export default connect(mapStateToProps, mapDispatchToProps)(JobShow);

@@ -18,7 +18,7 @@ class App extends Component{
         <Router>
         <Route exact path="/" component={Home}/>
         <Route exact path="/jobs" component={JobContainer}/>
-        <Route path="/job/:id" component={JobShow}/>
+        <Route path="/jobs/:id" component={JobShow}/>
         <Route exact path="/add-job" component={JobForm}/>
         <Route exact path="/agencies" component={AgencyContainer}/>
         </Router>

@@ -23,7 +23,7 @@ class JobList extends Component {
                                 <Card.Subtitle>{job.employer}</Card.Subtitle>
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
-                            <Link to={`/job/${job.id}`} id={job.id}>Job Link</Link>
+                            <Link to={`/jobs/${job.id}`} id={job.id}>Job Link</Link>
                             <Button variant="danger" onClick={() => this.props.deleteJob(job.id)} id={job.id}>Delete Job</Button>
                         </Card>
                 )}
