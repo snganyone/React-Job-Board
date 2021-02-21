@@ -11,11 +11,12 @@ class JobList extends Component {
     state = {
         likes: {}
       }
+
       handleClick = (event) => {
         let num = 1;
         let button = event.target.id;
         if(this.state.likes[button]){
-          num = this.state.likes[button] +1;
+          num = this.state.likes[button] + 1;
         }
         this.setState({
           likes: {...this.state.likes, [button]: num}
@@ -37,7 +38,8 @@ class JobList extends Component {
                                 <Card.Subtitle>{job.employer}</Card.Subtitle>
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
-                            <Button>Like</Button>
+                            <Button id={job.id} onClick={this.handleClick}>Like</Button>
+                            {this.state.likes[job.id]}
                             <Link to={`/jobs/${job.id}`} id={job.id}>Job Link</Link>
                             <Button variant="danger" onClick={() => this.props.deleteJob(job.id)} id={job.id}>Delete Job</Button>
                         </Card>
