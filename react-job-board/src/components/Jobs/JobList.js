@@ -28,17 +28,18 @@ class JobList extends Component {
     }
 
     render(){
+      const FULL_HEART = '♥'
         console.log(this.props)
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                {this.props.jobs.map(job => 
+                {this.props.jobs.map(job =>
                         <Card>
                             <Card.Body>
                                 <Card.Title>{job.title}</Card.Title>
                                 <Card.Subtitle>{job.employer}</Card.Subtitle>
                                 <Card.Text>{job.description}</Card.Text>
                             </Card.Body>
-                            <Button id={job.id} onClick={this.handleClick}>Like</Button>
+                            <Button id={job.id} onClick={this.handleClick}>{FULL_HEART}</Button>
                             {this.state.likes[job.id]}
                             <Link to={`/jobs/${job.id}`} id={job.id}>Job Link</Link>
                             <Button variant="danger" onClick={() => this.props.deleteJob(job.id)} id={job.id}>Delete Job</Button>
